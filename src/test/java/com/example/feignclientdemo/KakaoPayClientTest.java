@@ -17,6 +17,7 @@ class KakaoPayClientTest {
 
         KakaoPayRequestDTO request = new KakaoPayRequestDTO();
 
+        System.out.println("request = " + request);
         KakaoPayResponseDTO kakaoPayResponseDTO = kakaoPayClient.requestPay("KakaoAK c3c1fcb48b30dfb68e37449cc31dffa3", request);
         System.out.println("kakaoPayResponseDTO = " + kakaoPayResponseDTO);
     }
