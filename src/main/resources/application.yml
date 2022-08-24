@@ -3,3 +3,6 @@ feign:
     config:
       default:
         logger-level: full
+logging:
+  level:
+    root: debug

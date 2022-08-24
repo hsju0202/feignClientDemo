@@ -3,7 +3,7 @@ package com.example.feignclientdemo;
 import lombok.Data;
 
 @Data
-public class KakaoPayResponseDTO {
+public class KakaoPayReadyResponse {
 
     private String tid;
     private String next_redirect_app_url;

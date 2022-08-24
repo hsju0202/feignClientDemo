@@ -3,7 +3,7 @@ package com.example.feignclientdemo;
 import lombok.Data;
 
 @Data
-public class KakaoPayRequestDTO {
+public class KakaoPayReadyRequest {
 
     private String cid = "TC0ONETIME";
     private String partner_order_id = "partner_order_id";
@@ -13,7 +13,7 @@ public class KakaoPayRequestDTO {
     private String total_amount = "2200";
     private String vat_amount = "200";
     private String tax_free_amount = "0";
-    private String approval_url = "https://developers.kakao.com/success";
-    private String fail_url = "https://developers.kakao.com/fail";
-    private String cancel_url = "https://developers.kakao.com/cancel";
+    private String approval_url = "http://localhost:8080";
+    private String fail_url = "http://localhost:8080";
+    private String cancel_url = "http://localhost:8080";
 }

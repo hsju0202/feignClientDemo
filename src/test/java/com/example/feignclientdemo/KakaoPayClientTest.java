@@ -4,7 +4,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.HashMap;
+import java.util.Map;
 
 @SpringBootTest
 class KakaoPayClientTest {
@@ -13,12 +14,18 @@ class KakaoPayClientTest {
     private KakaoPayClient kakaoPayClient;
 
     @Test
-    void requestPay() {
+    void requestPayForReady() {
 
-        KakaoPayRequestDTO request = new KakaoPayRequestDTO();
+        KakaoPayReadyRequest request = new KakaoPayReadyRequest();
+        KakaoPayReadyResponse response = kakaoPayClient.requestPayForReady("KakaoAK ${adminKey}", request);
+        System.out.println("response = " + response);
+    }
 
-        System.out.println("request = " + request);
-        KakaoPayResponseDTO kakaoPayResponseDTO = kakaoPayClient.requestPay("KakaoAK c3c1fcb48b30dfb68e37449cc31dffa3", request);
-        System.out.println("kakaoPayResponseDTO = " + kakaoPayResponseDTO);
+    @Test
+    void requestPayForApproval() {
+
+        KakaoPayApprovalRequest request = new KakaoPayApprovalRequest();
+        KakaoPayApprovalResponse response = kakaoPayClient.requestPayForApproval("KakaoAK ${adminKey}", request);
+        System.out.println("response = " + response);
     }
 }
